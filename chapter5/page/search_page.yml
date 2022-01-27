@@ -1,0 +1,20 @@
+searchInput:
+  - id
+  - globalSearchInput
+
+searchBtn:
+  - id
+  - globalSearchButton
+
+user_name:
+  - xpath
+  - //*[@id="userNav"]/li[1]/ul/li[1]/a/div[2]
+
+bug_label:
+  - xpath
+  - //*[@id="mainMenu"]/div[1]/div[2]/span[1]
+
+# 导航用户头像按钮
+home:
+  - xpath
+  - //*[@id="userNav"]/li[1]/a/div

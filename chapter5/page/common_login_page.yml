@@ -1,0 +1,24 @@
+# 用户名
+username:
+  - id
+  - account
+
+# 密码
+password:
+  - name
+  - password
+
+# 登录按钮
+loginBtn:
+  - id
+  - submit
+
+# 退出按钮
+logoutBtn:
+  - xpath
+  - //*[@id="userNav"]/li[1]/ul/li[14]/a
+
+# 导航用户头像按钮
+home:
+  - xpath
+  - //*[@id="userNav"]/li[1]/a/div

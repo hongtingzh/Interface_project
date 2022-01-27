@@ -1,0 +1,11 @@
+test_b1 (test_module_1.B) ... skipped ''
+test_b2 (test_module_1.B) ... ok
+test_c1 (test_module_2.C) ... ok
+test_c2 (test_module_2.C) ... ok
+test_d1 (test_module_2.D) ... ok
+test_d2 (test_module_2.D) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK (skipped=1)

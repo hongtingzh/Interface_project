@@ -1,0 +1,24 @@
+22:58:34-demo_log-ERROR-FAIL: test_login(*args: tuplr = *(<decorators_test_po.TestSearch testMethod=test_login>,)), **kwargs: dict = **{}
+23:02:09-demo_log-ERROR-FAIL: func_a(*args: tuplr = *()), **kwargs: dict = **{}
+Traceback (most recent call last):
+  File "D:\tool\PyCharm Community Edition 2020.3.5\workspace\Interface_project\chapter6\decorators.py", line 60, in wrap_func
+    func(*args, **kwargs)
+  File "D:\tool\PyCharm Community Edition 2020.3.5\workspace\Interface_project\chapter6\log_test.py", line 10, in func_a
+    return 1 / args.__len__(), 1 / kwargs.__len__()
+ZeroDivisionError: division by zero
+23:03:22-demo_log-ERROR-FAIL: test_login(*args: tuplr = *(<decorators_test_po.TestSearch testMethod=test_login>,)), **kwargs: dict = **{}
+Traceback (most recent call last):
+  File "D:\tool\PyCharm Community Edition 2020.3.5\workspace\Interface_project\chapter6\decorators.py", line 60, in wrap_func
+    func(*args, **kwargs)
+  File "D:\tool\PyCharm Community Edition 2020.3.5\workspace\Interface_project\chapter6\decorators_test_po.py", line 23, in test_login
+    assert self.element('sp.user_name').text == 'adminn'
+AssertionError
+23:03:22-demo_log-ERROR-FAIL: test_search_bug(*args: tuplr = *(<decorators_test_po.TestSearch testMethod=test_search_bug>,)), **kwargs: dict = **{}
+Traceback (most recent call last):
+  File "D:\tool\PyCharm Community Edition 2020.3.5\workspace\Interface_project\chapter6\decorators.py", line 60, in wrap_func
+    func(*args, **kwargs)
+  File "D:\tool\PyCharm Community Edition 2020.3.5\workspace\Interface_project\chapter6\decorators.py", line 41, in wraps_func
+    f = unittest.skipIf(
+  File "D:\tool\python3.9\lib\unittest\case.py", line 119, in skip_wrapper
+    raise SkipTest(reason)
+unittest.case.SkipTest: The pre-depend case:test_login has failed! Skip the specified case!
