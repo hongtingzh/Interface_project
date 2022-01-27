@@ -11,4 +11,64 @@ fake = Factory.create('zh_CN')
 
 
 def random_python_data():
-    return fake.pystr()
+    return fake.pystr(), \
+           fake.pyint(), \
+           fake.pyfloat(), \
+           fake.pybool(), \
+           fake.pylist(nb_elements=2), \
+           fake.pytuple(nb_elements=2), \
+           fake.pydict(nb_elements=2)
+
+
+def random_uuid():
+    return fake.uuid4()
+
+
+def random_text():
+    return fake.text()
+
+
+def random_word():
+    return fake.word(), fake.words()
+
+
+def random_image_url():
+    return fake.image_url()
+
+
+def random_file_path():
+    return fake.file_path()
+
+
+def random_os_info(os_type: str = 'win'):
+    if os_type == 'win':
+        return fake.windows_platform_token() + ' ' + fake.linux_processor()
+    if os_type == 'linux':
+        return fake.linux_processor()
+    if os_type == 'mac':
+        return fake.mac_platform_token()
+    if os_type == 'ios':
+        return fake.ios_platform_token()
+    if os_type == 'android':
+        return fake.android_platform_token()
+    return None
+
+
+def random_hash(raw_output: bool = False):
+    return {'md5': fake.md5(raw_output), 'sha1': fake.sha1(raw_output), 'sha256': fake.sha256(raw_output)}
+
+
+def random_password(length: int = 6,
+                    special_chars: bool = False,
+                    digits: bool = True,
+                    upper_case: bool = False,
+                    lower_case: bool = True):
+    return fake.password(length=length,
+                         special_chars=special_chars,
+                         digits=digits,
+                         upper_case=upper_case,
+                         lower_case=lower_case
+                         )
+
+
+print(random_password())
