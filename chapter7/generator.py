@@ -72,3 +72,4 @@ def random_password(length: int = 6,
 
 
 print(random_password())
+# test
