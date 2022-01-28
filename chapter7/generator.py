@@ -136,5 +136,3 @@ def random_mime_type(mime_type: str = 'application'):
     return fake.mime_type()
 
 
-print(random_mime_type('image'))
-
