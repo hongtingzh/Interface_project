@@ -71,5 +71,70 @@ def random_password(length: int = 6,
                          )
 
 
-print(random_password())
-# test
+def random_name():
+    return fake.name()
+
+
+def random_address():
+    return fake.address()
+
+
+def random_phone_number():
+    return fake.phone_number()
+
+
+def random_job():
+    return fake.job()
+
+
+def random_ssn(*args):
+    return fake.ssn(*args)
+
+
+def random_credit_card_full():
+    return fake.credit_card_full()
+
+
+def random_company():
+    return fake.company()
+
+
+def random_email(domain):
+    return fake.email(domain)
+
+
+def random_birth(minimum_age: int = 0,
+                 maximum_age: int = 115):
+    return fake.date_of_birth(minimum_age=minimum_age, maximum_age=maximum_age)
+
+
+def random_profile():
+    return fake.profile()
+
+
+def random_ip4(private=False, public=False):
+    if private:
+        return fake.ipv4_private()
+    if public:
+        return fake.ipv4_public()
+    return fake.ipv4()
+
+
+def random_ip6():
+    return fake.ipv6()
+
+
+def random_mac_address():
+    return fake.mac_address()
+
+
+def random_user_agent():
+    return fake.user_agent()
+
+
+def random_mime_type(mime_type: str = 'application'):
+    return fake.mime_type()
+
+
+print(random_mime_type('image'))
+
