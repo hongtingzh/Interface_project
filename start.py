@@ -29,3 +29,6 @@ for test in tests:
 with open('./report.html', 'w') as fp:
     runner = HTMLTestRunner(fp, verbosity=2, title='test')
     runner.run(suit)
+
+from chapter7.mail import mail
+mail.send()
