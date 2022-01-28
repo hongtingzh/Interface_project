@@ -141,3 +141,19 @@ LOG_FILE = join(BASE_PATH, 'chapter6/demo.log')
 LOG_LEVEL = logging.DEBUG
 # --------------------日志文件相关配置--------------------
 
+# --------------------邮件相关配置--------------------
+# 发件人邮箱
+sender = 'hongtingzhang@qq.com'
+
+# 收件人邮箱
+receiver = ['1462367817@qq.com', 'hongting@faisco.biz']
+
+# 邮件title
+title = '测试报告'
+
+server = 'smtp.qq.com'
+
+# 发送邮件的授权码
+auth_code = 'hivwbxkuautfifji'
+# --------------------邮件相关配置--------------------
+

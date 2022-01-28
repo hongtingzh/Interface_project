@@ -6,32 +6,24 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from os.path import exists
 import re
+from setting import *
 
 
 class Email:
 
     def __init__(self,
-                 sender: str,
-                 receiver: [str, list],
-                 title: str,
-                 server: str,
-                 auth_code: str,
                  message: str = None,
                  attachment_file: [str, list] = None):
-        self.sender = sender
-        self.receiver = receiver
-        self.title = title
         self.message = message
         self.attachment_file = attachment_file
-        self.server = server
-        self.auth_code = auth_code
 
         self.msg = MIMEMultipart('related')
 
     def send(self):
-        self.msg['Subject'] = self.title
-        self.msg['Form'] = self.sender
-        self.msg['To'] = self.receiver
+
+        self.msg['Subject'] = title
+        self.msg['From'] = sender
+        self.msg['To'] = ','.join(receiver)
 
         if self.message:
             self.msg.attach(MIMEText(self.message, 'plain', 'utf-8'))
@@ -44,9 +36,9 @@ class Email:
                     self._attach_file(_path)
 
         try:
-            smtp_server = smtplib.SMTP(self.server)
-            smtp_server.login(self.sender, self.auth_code)
-            smtp_server.sendmail(self.sender, self.receiver, self.msg.as_string())
+            smtp_server = smtplib.SMTP(server)
+            smtp_server.login(sender, auth_code)
+            smtp_server.sendmail(sender, receiver, self.msg.as_string())
             smtp_server.quit()
             print('邮件发送成功')
         except smtplib.SMTPException:
@@ -63,11 +55,5 @@ class Email:
             self.msg.attach(att)
 
 
-mail = Email(sender='1462367817@qq.com',
-             receiver='1462367817@qq.com',
-             title='title',
-             server='smtp.qq.com',
-             auth_code='hivwbxkuautfifji',
-             message='ttt',
-             attachment_file=r'D:\Tools\git\workspace\Interface_project\chapter7\generator.py')
+# mail = Email(message='ttt', attachment_file=r'D:\Tools\git\workspace\Interface_project\chapter7\generator.py')
 # mail.send()
